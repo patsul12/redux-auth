@@ -1,7 +1,7 @@
 {
   "name": "redux-auth-candorhub",
   "description": "Complete token authentication system for react + redux.",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "license": "WTFPL",
   "repository": {
     "type": "git",
