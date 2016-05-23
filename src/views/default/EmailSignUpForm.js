@@ -9,6 +9,7 @@ class EmailSignUpForm extends React.Component {
     endpoint: PropTypes.string,
     icon: PropTypes.string,
     inputProps: PropTypes.shape({
+      username: PropTypes.object,
       email: PropTypes.object,
       password: PropTypes.object,
       passwordConfirmation: PropTypes.object,
@@ -18,6 +19,7 @@ class EmailSignUpForm extends React.Component {
 
   static defaultProps = {
     inputProps: {
+      username: {},
       email: {},
       password: {},
       submit: {}
@@ -53,6 +55,14 @@ class EmailSignUpForm extends React.Component {
       <form className='redux-auth email-sign-up-form'
             style={{clear: "both", overflow: "hidden"}}
             onSubmit={this.handleSubmit.bind(this)}>
+        <Input type="text"
+               label="Username"
+               className="email-sign-up-email"
+               disabled={disabled}
+               value={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form", "username"])}
+               errors={this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "errors", "username"])}
+               onChange={this.handleInput.bind(this, "username")} />
+
         <Input type="text"
                label="Email"
                className="email-sign-up-email"

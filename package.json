@@ -1,5 +1,5 @@
 {
-  "name": "redux-auth",
+  "name": "redux-auth-candorhub",
   "description": "Complete token authentication system for react + redux.",
   "version": "0.0.2",
   "license": "WTFPL",
