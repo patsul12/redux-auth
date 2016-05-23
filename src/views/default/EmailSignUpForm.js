@@ -98,7 +98,6 @@ class EmailSignUpForm extends React.Component {
                       style={{float: "right"}}
                       icon={this.props.icon}
                       disabled={disabled}
-                      onClick={this.handleSubmit.bind(this)}
                       {...this.props.inputProps.submit}>
           Sign Up
         </ButtonLoader>
