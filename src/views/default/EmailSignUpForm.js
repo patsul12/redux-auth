@@ -40,7 +40,6 @@ class EmailSignUpForm extends React.Component {
 
   handleSubmit (event) {
     console.log("submitting form to endpoint", this.getEndpoint());
-    event.preventDefault();
     let formData = this.props.auth.getIn(["emailSignUp", this.getEndpoint(), "form"]).toJS();
     this.props.dispatch(emailSignUp(formData, this.getEndpoint()));
   }
@@ -98,6 +97,7 @@ class EmailSignUpForm extends React.Component {
                       style={{float: "right"}}
                       icon={this.props.icon}
                       disabled={disabled}
+                      onClick={this.handleSubmit.bind(this)}>
                       {...this.props.inputProps.submit}>
           Sign Up
         </ButtonLoader>
