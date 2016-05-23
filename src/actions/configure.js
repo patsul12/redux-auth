@@ -116,7 +116,7 @@ export function configure(endpoint={}, settings={}) {
 
       // if tokens were invalidated by server, make sure to clear browser
       // credentials
-      if (!settings.initialCredentials) {
+      if (!settings.clientOnly && !settings.initialCredentials || settings.cleanSession) {
         destroySession();
       }
 
